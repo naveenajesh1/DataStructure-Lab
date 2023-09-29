@@ -1,0 +1,43 @@
+#include<stdio.h>
+void main()
+{
+int i,j,lim,temp,count=0;
+printf("Enter the limit:");
+scanf("%d",&lim);
+count+=2;
+int a[lim];
+printf("Enter the no:");
+
+for(i=0;i<lim;i++)
+{
+count++;
+scanf("%d",&a[i]);
+count++;
+}
+
+for(i=0;i<lim;i++)
+{
+count++;
+for(j=i+1;j<lim;j++)
+{
+count++;
+if(a[i]>a[j])
+{
+count++;
+temp=a[i];count++;
+a[i]=a[j];count++;
+a[j]=temp;count++;
+}
+}
+}
+printf("the sorted array is:\n");
+for(i=0;i<lim;i++)
+{
+count++;
+printf("%d ",a[i]);
+count++;
+}
+count+=2;
+printf("\ntime complexity =%d",count);
+printf("\nspace complexity =%d",(20+(4*lim)));
+}
