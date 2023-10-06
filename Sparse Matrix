@@ -1,0 +1,57 @@
+#include<stdio.h>
+void main()
+{
+int i,j,row,col;
+printf("Enter the order of the matrix:");
+scanf("%d%d",&row,&col);
+int a[row][col];
+printf("Enter the values of the Sparse matrix:");
+for(i=0;i<row;i++)
+{
+for(j=0;j<col;j++)
+{
+scanf(" %d",&a[i][j]);
+}
+}
+printf("Sparse Matrix:\n");
+for(i=0;i<row;i++)
+{
+for(j=0;j<col;j++)
+{
+printf(" %d",a[i][j]);
+}
+printf("\n\n");
+}
+
+int k=1,count=0;
+struct sparse
+{
+int row;
+int col;
+int value;
+}b[50];
+for(i=0;i<row;i++)
+{
+for(j=0;j<col;j++)
+{
+if(a[i][j]!=0)
+{
+b[k].row=i;
+b[k].col=j;
+b[k].value=a[i][j];
+k++;
+count++;
+}
+}
+}
+b[0].row=row;
+b[0].col=col;
+b[0].value=count;
+printf("Tuple Representation\n\n");
+printf("ROW COL VALUE\n");
+for(i=0;i<k;i++)
+{
+printf(" %d   %d    %d",b[i].row,b[i].col,b[i].value);
+printf("\n");
+}
+}
